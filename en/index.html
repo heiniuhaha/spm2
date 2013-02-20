@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="nico 0.2.3">
+    <meta name="theme" content="spm 0.1">
+    <title>spm</title>
+    <link rel="stylesheet" href="../static/one.css" />
+    <link rel="stylesheet" href="../static/syntax.css" />
+  </head>
+  <body>
+    <div class="navigation" role="navigation">
+      <div class="container">
+        <a class="home" href="../">SPM</a>
+        <div class="menu">
+          <a href="../en/">English</a>
+          <a href="../zh/">中文文档</a>
+          <a href="../api/">API</a>
+          <a href="../cli/">Manual</a>
+        </div>
+      </div>
+    </div>
+    <div class="document">
+<div class="hentry">
+  <h1 class="entry-title">spm</h1>
+  <blockquote class="entry-description"><p>spm is a static package manager, it&#39;s <strong>not a build tools</strong>.</p></blockquote>
+  <div class="entry-content"><p>spm is built on nodejs, which means you have to install nodejs yourself.
+I believe you have done this part, but I&#39;d like to repeat myself.</p>
+
+<p>There are several ways to install nodejs. The easiest way is through a package manager like <code>apt-get</code> on debian-like linux distribution, or <code>homebrew</code> on mac. However node in such package managers may be too old.</p>
+
+<p>Get the node binaries on the offical <a href="http://nodejs.org/download/">download</a> webpage.</p>
+
+<p>Suggestions for Linux:</p>
+
+<ul>
+<li><p>grab the <em>Linux Binaries</em>, extract it to your home directory, for example: <code>~/dist/node</code></p></li>
+<li><p>add <code>~/dist/node/bin</code> to <code>PATH</code> in your bashrc or zshrc:</p>
+
+<pre>export PATH=&quot;$PATH:$HOME&#47;dist&#47;node&#47;bin&quot;
+</pre></li>
+</ul>
+
+<p>Putting node in your home directory or some place need no sudo privellege makes things simple. You don&#39;t have to <code>sudo npm install &lt;package&gt;</code> anymore.</p>
+
+<p>Suggestions for Mac:</p>
+
+<ul>
+<li>just like Linux, you can do the same thing.</li>
+<li>homebrew is another good choice.</li>
+</ul>
+
+<p>Suggestions for Windows:</p>
+
+<ul>
+<li>do whatever you want, I don&#39;t think there is another choice.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Install spm is simple with npm:</p>
+
+<pre>$ npm install spm -g
+</pre>
+
+<p>Please install it with <code>-g</code> option, otherwise you can&#39;t use it in command line.</p>
+
+<p>If you want to try the latest version of spm, try the ninja channel:</p>
+
+<pre>$ npm install spm@ninja -g
+</pre>
+
+<p>You can also grab the code from <a href="https://github.com/spmjs/spm2">github</a> and install from the source code.</p>
+
+<p>Try with <code>spm</code> now:</p>
+
+<pre>$ spm
+</pre>
+
+<p>If you haven&#39;t set <code>NODE_PATH</code>, it will prompt an information like:</p>
+
+<pre>Please set environment variable NODE_PATH in ~&#47;.zshrc:
+
+    export NODE_PATH=&#47;usr&#47;local&#47;share&#47;npm&#47;lib&#47;node_modules
+</pre>
+<h2 id="commands">Commands</h2>
+<p>spm comes with some built-in commands, and it can be extended by plugins. Show the help screen with:</p>
+
+<pre>$ spm -h
+</pre>
+
+<p>or:</p>
+
+<pre>$ spm help
+</pre>
+
+<p><img src="../assets/spm-help.png" alt="spm help"/></p>
+
+<p>You can get more help information of a sub-command by:</p>
+
+<pre>$ spm build -h
+</pre>
+
+<p>or:</p>
+
+<pre>$ spm help build
+</pre>
+
+<p>Want to write your own plugin? Checkout the <a href="./plugin">plugin</a> section.</p>
+<h2 id="build">Build</h2>
+<p>Build is a <strong>transport</strong> process, it is not a code to binary process.</p>
+
+<p>For example, we have a package <strong>spm/hello</strong>:</p>
+
+<pre>package.json
+src&#47;
+    hello.js
+</pre>
+
+<p>The source code of <code>hello.js</code> is as simple as:</p>
+<div class="highlight"><pre><code class="javascript">define(<span class="keyword">function</span>(require) {
+    require(<span class="string">'jquery'</span>)
+})
+</code></pre></div>
+<p>After <code>spm build</code>, it should be:</p>
+<div class="highlight"><pre><code class="javascript">define(<span class="string">'spm/hello/1.0.0/hello'</span>, [<span class="string">'jquery/jquery/1.7.2/jquery'</span>], <span class="keyword">function</span>(require) {
+    require(<span class="string">'jquery/jquery/1.7.2/jquery'</span>)
+})
+</code></pre></div>
+<p>The package structure will be:</p>
+
+<pre>package.json
+src&#47;
+    hello.js
+dist&#47;
+    hello.js
+</pre>
+
+<p>Get more information on <a href="./build">build</a>.</p>
+<h2 id="info-amp-search">Info &amp; Search</h2><h2 id="install-amp-publish">Install &amp; Publish</h2></div>
+</div>
+</div>
+    <div class="footer">
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.2.3</p>
+    </div>
+    <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
+    <div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>
+  </body>
+</html>

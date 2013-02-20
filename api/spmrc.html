@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="nico 0.2.3">
+    <meta name="theme" content="spm 0.1">
+    <title>spmrc</title>
+    <link rel="stylesheet" href="../static/one.css" />
+    <link rel="stylesheet" href="../static/syntax.css" />
+  </head>
+  <body>
+    <div class="navigation" role="navigation">
+      <div class="container">
+        <a class="home" href="../">SPM</a>
+        <div class="menu">
+          <a href="../en/">English</a>
+          <a href="../zh/">中文文档</a>
+          <a href="../api/">API</a>
+          <a href="../cli/">Manual</a>
+        </div>
+      </div>
+    </div>
+    <div class="document">
+<div class="hentry">
+  <h1 class="entry-title">spmrc</h1>
+  <div class="entry-meta">
+    <time class="updated" datetime="2013-01-28T00:00:00+08:00">2013-01-28</time>
+  </div>
+  <div class="entry-content"><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> spmrc = require(<span class="string">'spm'</span>).sdk.spmrc
+</code></pre></div>
+<p>spmrc is located at <code>~/.spm/spmrc</code> in ini format. An example:</p>
+
+<pre>[user]
+username = spm
+
+[template:arale]
+url = http:&#47;&#47;aralejs.org&#47;hello
+</pre>
+<h2 id="spmrc-get">spmrc.get</h2>
+<p>Get information in spmrc:</p>
+<div class="highlight"><pre><code class="javascript">spmrc.get(<span class="string">'user'</span>)
+<span class="comment">// {username: 'spm'}</span>
+
+spmrc.get(<span class="string">'user.username'</span>)
+<span class="comment">// spm</span>
+</code></pre></div><h2 id="spmrc-set">spmrc.set</h2>
+<p>Set value in a section:</p>
+<div class="highlight"><pre><code class="javascript">spmrc.set(<span class="string">'user.username'</span>, <span class="string">'spmjs'</span>)
+</code></pre></div><h2 id="spmrc-config">spmrc.config</h2>
+<p>A mix of get and set:</p>
+<div class="highlight"><pre><code class="javascript">spmrc.config(<span class="string">'user.username'</span>)  <span class="comment">// equal spmrc.get</span>
+spmrc.config(<span class="string">'user.username'</span>, <span class="string">'spm'</span>)  <span class="comment">// equal spmrc.set</span>
+</code></pre></div><h2 id="spmrc-parse">spmrc.parse</h2>
+<p>Parse an ini file to object. Default file is <code>~/.spm/spmrc</code>.</p>
+<div class="highlight"><pre><code class="javascript">spmrc.parse(file)
+<span class="comment">// an object</span>
+</code></pre></div><h2 id="spmrc-write">spmrc.write</h2>
+<p>Write object to <code>~/.spm/spmrc</code>.</p>
+<div class="highlight"><pre><code class="javascript">spmrc.write(obj)
+</code></pre></div></div>
+</div>
+</div>
+    <div class="footer">
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.2.3</p>
+    </div>
+    <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
+    <div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>
+  </body>
+</html>

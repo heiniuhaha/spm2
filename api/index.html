@@ -25,11 +25,12 @@
 <div class="hentry">
   <h1 class="entry-title">spm</h1>
   <blockquote class="entry-description"><p>The API of spm.</p></blockquote>
-  <div class="entry-content"><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)
+  <div class="entry-content"><p>Get the interface of spm:</p>
+<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)
 </code></pre></div><h2 id="spm-version">spm.version</h2>
 <p>The version of spm.</p>
-<h2 id="spm-logging">spm.logging</h2>
-<p>Always use <code>spm.logging</code> in your program, never use <code>console</code>.</p>
+<h2 id="spm-log">spm.log</h2>
+<p>Always use <code>spm.log</code> in your program, never use <code>console</code>.</p>
 <h2 id="spm-plugin">spm.plugin</h2>
 <ul>
 <li>spm.plugin.install</li>
@@ -53,9 +54,11 @@
 <p>Low level API:</p>
 
 <ul>
+<li><code>spm.sdk.spmrc</code></li>
 <li><a href="https://github.com/spmjs/cmd-util/blob/master/docs/ast.md"><code>spm.sdk.ast</code></a></li>
 <li><code>spm.sdk.iduri</code></li>
 <li><code>spm.sdk.yuan</code></li>
+<li><code>spm.sdk.grunt</code></li>
 </ul>
 </div>
 </div>

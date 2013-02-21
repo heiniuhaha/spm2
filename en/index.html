@@ -81,6 +81,7 @@ I believe you have done this part, but I&#39;d like to repeat myself.</p>
 <pre>Please set environment variable NODE_PATH in ~&#47;.zshrc:
 
     export NODE_PATH=&#47;usr&#47;local&#47;share&#47;npm&#47;lib&#47;node_modules
+
 </pre>
 <h2 id="commands">Commands</h2>
 <p>spm comes with some built-in commands, and it can be extended by plugins. Show the help screen with:</p>
@@ -109,7 +110,7 @@ I believe you have done this part, but I&#39;d like to repeat myself.</p>
 <h2 id="build">Build</h2>
 <p>Build is a <strong>transport</strong> process, it is not a code to binary process.</p>
 
-<p>For example, we have a package <strong>spm/hello</strong>:</p>
+<p>For example, we have a package <strong>hello</strong>:</p>
 
 <pre>package.json
 src&#47;
@@ -117,13 +118,37 @@ src&#47;
 </pre>
 
 <p>The source code of <code>hello.js</code> is as simple as:</p>
-<div class="highlight"><pre><code class="javascript">define(<span class="keyword">function</span>(require) {
-    require(<span class="string">'jquery'</span>)
+<div class="highlight"><pre><code class="javascript">define(<span class="keyword">function</span>(require, exports, module) {
+    exports.name = <span class="string">'hello'</span>
+    exports.jquery = require(<span class="string">'jquery'</span>)
 })
 </code></pre></div>
+<p>The <code>package.json</code> (more information on <a href="./package">package</a> section) is as simple as:</p>
+<div class="highlight"><pre><code class="javascript">{
+    <span class="string">"family"</span>: <span class="string">"lepture"</span>,
+    <span class="string">"name"</span>: <span class="string">"hello"</span>,
+    <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,
+    <span class="string">"description"</span>: <span class="string">"hello spm"</span>,
+    <span class="string">"spm"</span>: {
+        <span class="string">"alias"</span>: {
+            <span class="string">"jquery"</span>: <span class="string">"jquery/jquery/1.7.2/jquery"</span>
+        },
+        <span class="string">"output"</span>: {
+            <span class="string">"hello.js"</span>: [<span class="string">"hello.js"</span>]
+        }
+    }
+}
+</code></pre></div>
+<p>Install the requirements and build the package:</p>
+
+<pre>$ spm install
+$ spm build
+</pre>
+
 <p>After <code>spm build</code>, it should be:</p>
-<div class="highlight"><pre><code class="javascript">define(<span class="string">'spm/hello/1.0.0/hello'</span>, [<span class="string">'jquery/jquery/1.7.2/jquery'</span>], <span class="keyword">function</span>(require) {
-    require(<span class="string">'jquery/jquery/1.7.2/jquery'</span>)
+<div class="highlight"><pre><code class="javascript">define(<span class="string">'lepture/hello/1.0.0/hello'</span>, [<span class="string">'jquery/jquery/1.7.2/jquery'</span>], <span class="keyword">function</span>(require) {
+    exports.name = <span class="string">'hello'</span>
+    exports.jquery = require(<span class="string">'jquery/jquery/1.7.2/jquery'</span>)
 })
 </code></pre></div>
 <p>The package structure will be:</p>
@@ -133,10 +158,55 @@ src&#47;
     hello.js
 dist&#47;
     hello.js
+    hello-debug.js
 </pre>
 
 <p>Get more information on <a href="./build">build</a>.</p>
-<h2 id="info-amp-search">Info &amp; Search</h2><h2 id="install-amp-publish">Install &amp; Publish</h2></div>
+<h2 id="install">Install</h2>
+<p>You have used <code>spm install</code> in the build process, learn more about <code>install</code> with:</p>
+
+<pre>$ spm help install
+</pre>
+
+<p>There is also an online manual for you <a href="../cli/install">spm install</a>.</p>
+<h2 id="publish-amp-unpublish">Publish &amp; Unpublish</h2>
+<p>We need your contribution, publishing a package helps a lot.</p>
+
+<p>Register an account at <a href="https://spmjs.org">spmjs.org</a>. Replace <code>family</code> in <code>package.json</code> with your account name (<code>lepture</code> is my account name).</p>
+
+<p>And now you can publish your package with:</p>
+
+<pre>$ spm publish
+</pre>
+
+<p>Get more help on publish:</p>
+
+<pre>$ spm help publish
+</pre>
+
+<ul>
+<li>You can also read our online manual <a href="../cli/publish">spm publish</a>.</li>
+<li>Find more information on <a href="./package">package</a>.</li>
+</ul>
+<h2 id="info-amp-search">Info &amp; Search</h2>
+<p>You can&#39;t miss it, let&#39;s try:</p>
+
+<pre>$ spm help info
+$ spm help search
+</pre>
+<h2 id="config">Config</h2>
+<p>The configuration file is located at <code>~/.spm/spmrc</code>. It is in ini format:</p>
+<div class="highlight"><pre><code class="ini"><span class="title">[user]</span>
+<span class="setting">username = <span class="value">lepture</span></span>
+
+<span class="title">[source:private]</span>
+<span class="setting">url = <span class="value">http://source.your-company.com</span></span>
+</code></pre></div>
+<p>More information can be found at <a href="./config">config</a> section.</p>
+</div>
+  <div class="entry-meta">
+    <time class="updated" datetime="2013-02-21T00:00:00+08:00">2013-02-21</time>
+  </div>
 </div>
 </div>
     <div class="footer">

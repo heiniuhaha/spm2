@@ -15,7 +15,6 @@
         <a class="home" href="../">SPM</a>
         <div class="menu">
           <a href="../en/">English</a>
-          <a href="../zh/">中文文档</a>
           <a href="../api/">API</a>
           <a href="../cli/">Manual</a>
         </div>
@@ -27,7 +26,7 @@
   <blockquote class="entry-description"><p>spm is a static package manager, it&#39;s <strong>not a build tools</strong>.</p></blockquote>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
-    <ul><li><a href="#installation">Installation</a></li><li><a href="#commands">Commands</a></li><li><a href="#build">Build</a></li><li><a href="#install">Install</a></li><li><a href="#publish-amp-unpublish">Publish &amp; Unpublish</a></li><li><a href="#info-amp-search">Info &amp; Search</a></li><li><a href="#config">Config</a></li></ul>
+    <ul><li><a href="#installation">Installation</a></li><li><a href="#commands">Commands</a></li><li><a href="#build">Build</a></li><li><a href="#install">Install</a></li><li><a href="#register-amp-login">Register &amp; Login</a></li><li><a href="#publish-amp-unpublish">Publish &amp; Unpublish</a></li><li><a href="#info-amp-search">Info &amp; Search</a></li><li><a href="#config">Config</a></li></ul>
   </div>
 
   <div class="entry-content"><p>spm is built on nodejs, which means you have to install nodejs yourself.
@@ -174,6 +173,24 @@ dist&#47;
 </pre>
 
 <p>There is also an online manual for you <a href="../cli/install">spm install</a>.</p>
+<h2 id="register-amp-login">Register &amp; Login</h2>
+<p>You can register an account at <a href="https://spmjs.org">spmjs.org</a>. You can also register your account with <code>spm</code>:</p>
+
+<pre>$ spm login
+
+do you have an account? (Y&#47;n)
+</pre>
+
+<p>And answer no. It will prompt:</p>
+
+<pre>do you have an account? (Y&#47;n) n
+
+username:
+email:
+password:
+</pre>
+
+<p>If you answer yes, you can login now.</p>
 <h2 id="publish-amp-unpublish">Publish &amp; Unpublish</h2>
 <p>We need your contribution, publishing a package helps a lot.</p>
 
@@ -193,6 +210,21 @@ dist&#47;
 <li>You can also read our online manual <a href="../cli/publish">spm publish</a>.</li>
 <li>Find more information on <a href="./package">package</a>.</li>
 </ul>
+
+<p>If you accidentally published a broken version, you can force to publish the version again:</p>
+
+<pre>$ spm publish -f
+</pre>
+
+<p>You can also unpublish it:</p>
+
+<pre>$ spm unpublish family&#47;name@version
+</pre>
+
+<p>You can even delete the whole project (**you can never recovery it again**):</p>
+
+<pre>$ spm unpublish family&#47;name
+</pre>
 <h2 id="info-amp-search">Info &amp; Search</h2>
 <p>You can&#39;t miss it, let&#39;s try:</p>
 

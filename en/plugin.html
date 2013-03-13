@@ -25,11 +25,62 @@
   <h1 class="entry-title">Plugin</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
-    <ul><li><a href="#register">Register</a></li><li><a href="#logging">Logging</a></li><li><a href="#library">Library</a></li></ul>
+    <ul><li><a href="#register">Register</a></li><li><a href="#uninstall">Uninstall</a></li></ul>
   </div>
 
-  <div class="entry-content"><p>Writing a plugin for spm is easy.</p>
-<h2 id="register">Register</h2><h2 id="logging">Logging</h2><h2 id="library">Library</h2></div>
+  <div class="entry-content"><h2 id="register">Register</h2>
+<p>Thanks for npm&#39;s <code>postinstall</code> policy.</p>
+
+<p>Add in your <code>package.json</code>:</p>
+<div class="highlight"><pre><code class="javascript">{
+    <span class="string">"scripts"</span>: {
+        <span class="string">"postinstall"</span>: <span class="string">"scripts/postinstall.js"</span>
+    }
+}
+</code></pre></div>
+<p>Create a <code>scripts/postinstall.js</code> in your package:</p>
+<div class="highlight"><pre><code class="javascript">#!<span class="regexp">/usr/</span>bin/env node
+
+<span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)
+spm.plugin.install({
+    name: <span class="string">'init'</span>,
+    binary: <span class="string">'spm-init'</span>,
+    description: <span class="string">'Generate project scaffolding from a template.'</span>
+});
+</code></pre></div>
+<p>Make this script excutable by:</p>
+
+<pre>$ chmod +x scripts&#47;postinstall.js
+</pre>
+
+<p>And when you install this package, for example:</p>
+
+<pre>$ npm install spm-init -g
+</pre>
+
+<p>You will see init on spm now:</p>
+
+<pre>$ spm help
+</pre>
+<h2 id="uninstall">Uninstall</h2>
+<p>Add in your <code>package.json</code>:</p>
+<div class="highlight"><pre><code class="javascript">{
+    <span class="string">"scripts"</span>: {
+        <span class="string">"uninstall"</span>: <span class="string">"scripts/uninstall.js"</span>
+    }
+}
+</code></pre></div>
+<p>Create a <code>scripts/uninstall.js</code> in your package:</p>
+<div class="highlight"><pre><code class="javascript">#!<span class="regexp">/usr/</span>bin/env node
+
+<span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)
+spm.plugin.uninstall(<span class="string">'init'</span>)
+</code></pre></div>
+<p>Make this script excutable by:</p>
+
+<pre>$ chmod +x scripts&#47;postinstall.js
+</pre>
+</div>
   <div class="entry-meta">
     <time class="updated" datetime="2013-02-25T00:00:00+08:00">2013-02-25</time>
   </div>

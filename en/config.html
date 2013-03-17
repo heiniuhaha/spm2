@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.2.3">
+    <meta name="generator" content="nico 0.3.0a1">
     <meta name="theme" content="spm 0.1">
     <title>Config</title>
     <link rel="stylesheet" href="../static/one.css" />
@@ -14,7 +14,7 @@
       <div class="container">
         <a class="home" href="../">SPM</a>
         <div class="menu">
-          <a href="../en/">English</a>
+          <a href="./">English</a>
           <a href="../api/">API</a>
           <a href="../cli/">Manual</a>
         </div>
@@ -29,63 +29,46 @@
   </div>
 
   <div class="entry-content"><p><strong>Status: API design</strong></p>
-
 <p>Configuration file is located at <code>~/.spm/spmrc</code> in ini format:</p>
-
-<pre>$ spm config user.username lepture
-</pre>
-<h2 id="user">user</h2>
-<p>The <code>[user]</code> section contains information of the current user.</p>
+<pre>$ spm config user.username lepture</pre><h2 id="user">user</h2><p>The <code>[user]</code> section contains information of the current user.</p>
 <div class="highlight"><pre><code class="ini"><span class="title">[user]</span>
 <span class="setting">username =<span class="value"></span></span>
 
 <span class="comment">; gruntfile can be a local path or an online url</span>
 <span class="comment">; gruntfile is used for task based commands</span>
-<span class="setting">gruntfile =<span class="value"></span></span>
-</code></pre></div><h2 id="install">install</h2>
-<p>The <code>[install]</code> section contains settings for installation.</p>
+<span class="setting">gruntfile =<span class="value"></span></span></code></pre></div><h2 id="install">install</h2><p>The <code>[install]</code> section contains settings for installation.</p>
 <div class="highlight"><pre><code class="ini"><span class="title">[install]</span>
 <span class="comment">; when spm install a module, should we keep the debugfiles</span>
 <span class="setting">debugfile = <span class="value"><span class="keyword">true</span></span></span>
 
 <span class="comment">; spm install path format, it should be end with {{filename}}</span>
-<span class="setting">format = <span class="value">{{family}}/{{name}}/{{version}}/{{filename}}</span></span>
-</code></pre></div><h2 id="source">source</h2>
-<p>Define or add your own source center with <code>[source]</code> section.</p>
-
+<span class="setting">format = <span class="value">{{family}}/{{name}}/{{version}}/{{filename}}</span></span></code></pre></div><h2 id="source">source</h2><p>Define or add your own source center with <code>[source]</code> section.</p>
 <p>The default source is:</p>
 <div class="highlight"><pre><code class="ini"><span class="title">[source:default]</span>
-<span class="setting">url = <span class="value">http://spmjs.org</span></span>
-</code></pre></div>
-<p>You can add another source:</p>
+<span class="setting">url = <span class="value">http://spmjs.org</span></span></code></pre></div><p>You can add another source:</p>
 <div class="highlight"><pre><code class="ini"><span class="title">[source:alipay]</span>
-<span class="setting">url = <span class="value">http://spmjs.alipay.com</span></span>
-</code></pre></div>
-<p>When you <code>info</code>, <code>search</code>, <code>login</code>, <code>install</code>, <code>publish</code>, you can set the source in your command line:</p>
-
-<pre>$ spm info -s alipay jquery
-</pre>
-</div>
+<span class="setting">url = <span class="value">http://spmjs.alipay.com</span></span></code></pre></div><p>When you <code>info</code>, <code>search</code>, <code>login</code>, <code>install</code>, <code>publish</code>, you can set the source in your command line:</p>
+<pre>$ spm info -s alipay jquery</pre></div>
   <div class="entry-meta">
-    <time class="updated" datetime="2013-02-27T00:00:00+08:00">2013-02-27</time>
+    <time class="updated" datetime="2013-02-27T00:00:00.000Z">2013-02-27</time>
   </div>
 </div>
 
 <div class="sidebar">
   <h2 class="sidebar-title">Documentation</h2>
   <ul>
-    <li><a href="../en/">spm</a></li>
-    <li><a href="../en/build">Build</a></li>
-    <li class="active"><a href="../en/config">Config</a></li>
-    <li><a href="../en/install">Install</a></li>
-    <li><a href="../en/package">package.json</a></li>
-    <li><a href="../en/plugin">Plugin</a></li>
+    <li><a href="./index">spm</a></li>
+    <li><a href="./build">Build</a></li>
+    <li class="active"><a href="./config">Config</a></li>
+    <li><a href="./install">Install</a></li>
+    <li><a href="./package">package.json</a></li>
+    <li><a href="./plugin">Plugin</a></li>
   </ul>
 </div>
 
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.2.3</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.3.0a1</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
     <div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>

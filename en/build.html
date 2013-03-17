@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.2.3">
+    <meta name="generator" content="nico 0.3.0a1">
     <meta name="theme" content="spm 0.1">
     <title>Build</title>
     <link rel="stylesheet" href="../static/one.css" />
@@ -14,7 +14,7 @@
       <div class="container">
         <a class="home" href="../">SPM</a>
         <div class="menu">
-          <a href="../en/">English</a>
+          <a href="./">English</a>
           <a href="../api/">API</a>
           <a href="../cli/">Manual</a>
         </div>
@@ -30,73 +30,54 @@
 
   <div class="entry-content"><p><code>spm build</code> focuses on package build, it is not designed as a build tool.
 It is based on <a href="https://github.com/spmjs/grunt-spm-build">grunt-spm-build</a> which is a collection of grunt tasks.</p>
-<h2 id="standard-package">Standard Package</h2>
-<p>The folder structure of a standard package:</p>
-
+<h2 id="standard-package">Standard Package</h2><p>The folder structure of a standard package:</p>
 <pre>package.json
-src&#47;
-    filename.js
-</pre>
-
-<p>After <code>spm build</code>, the folder structure:</p>
-
+src/
+    filename.js</pre><p>After <code>spm build</code>, the folder structure:</p>
 <pre>package.json
-src&#47;
+src/
     filename.js
-dist&#47;
+dist/
     filename.js
-    filename-debug.js
-</pre>
-
-<p>Learn how to write <a href="./package">package.json</a>.</p>
-<h2 id="customize-build">Customize Build</h2>
-<p><code>spm build</code> uses <a href="http://gruntjs.com">grunt</a> as the task manager.
+    filename-debug.js</pre><p>Learn how to write <a href="./package">package.json</a>.</p>
+<h2 id="customize-build">Customize Build</h2><p><code>spm build</code> uses <a href="http://gruntjs.com">grunt</a> as the task manager.
 If you want to customize and control the build process, you need to write
 your own grunt tasks.</p>
-
 <p><code>spm build</code> will call the <code>build</code> task in your <code>Gruntfile.js</code>.</p>
-
 <p>An example of <code>Gruntfile.js</code>:</p>
 <div class="highlight"><pre><code class="javascript">module.exports = <span class="keyword">function</span>(grunt) {
     grunt.registerTask(<span class="string">'build'</span>, <span class="keyword">function</span>() {
         console.log(<span class="string">'customize build'</span>)
     });
-}
-</code></pre></div>
-<p>When <code>spm build</code>, it will print <code>customize build</code>.</p>
-
+}</code></pre></div><p>When <code>spm build</code>, it will print <code>customize build</code>.</p>
 <p>Learn more about <a href="https://github.com/spmjs/grunt-spm-build">grunt-spm-build</a>, and customize your own build process.
 You can even write your own build tools with the help of our low level api
 <a href="https://github.com/spmjs/cmd-util">cmd-util</a>.</p>
-<h2 id="remote-gruntfile">Remote Gruntfile</h2>
-<p>Remote gruntfile is designed for team collaboration.</p>
-
+<h2 id="remote-gruntfile">Remote Gruntfile</h2><p>Remote gruntfile is designed for team collaboration.</p>
 <p>Add a <code>gruntfile</code> config in <code>~/.spm/spmrc</code>:</p>
 <div class="highlight"><pre><code class="ini"><span class="title">[user]</span>
-<span class="setting">gruntfile = <span class="value">http://your-company.com/gruntfile.js</span></span>
-</code></pre></div>
-<p>When <code>spm build</code>, it will download the gruntfile, and run the <code>build</code> task in this gruntfile.</p>
+<span class="setting">gruntfile = <span class="value">http://your-company.com/gruntfile.js</span></span></code></pre></div><p>When <code>spm build</code>, it will download the gruntfile, and run the <code>build</code> task in this gruntfile.</p>
 </div>
   <div class="entry-meta">
-    <time class="updated" datetime="2013-02-21T00:00:00+08:00">2013-02-21</time>
+    <time class="updated" datetime="2013-02-21T00:00:00.000Z">2013-02-21</time>
   </div>
 </div>
 
 <div class="sidebar">
   <h2 class="sidebar-title">Documentation</h2>
   <ul>
-    <li><a href="../en/">spm</a></li>
-    <li class="active"><a href="../en/build">Build</a></li>
-    <li><a href="../en/config">Config</a></li>
-    <li><a href="../en/install">Install</a></li>
-    <li><a href="../en/package">package.json</a></li>
-    <li><a href="../en/plugin">Plugin</a></li>
+    <li><a href="./index">spm</a></li>
+    <li class="active"><a href="./build">Build</a></li>
+    <li><a href="./config">Config</a></li>
+    <li><a href="./install">Install</a></li>
+    <li><a href="./package">package.json</a></li>
+    <li><a href="./plugin">Plugin</a></li>
   </ul>
 </div>
 
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.2.3</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.3.0a1</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
     <div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>

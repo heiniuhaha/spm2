@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.2.3">
+    <meta name="generator" content="nico 0.3.0a1">
     <meta name="theme" content="spm 0.1">
     <title>yuan</title>
     <link rel="stylesheet" href="../static/one.css" />
@@ -15,7 +15,7 @@
         <a class="home" href="../">SPM</a>
         <div class="menu">
           <a href="../en/">English</a>
-          <a href="../api/">API</a>
+          <a href="./">API</a>
           <a href="../cli/">Manual</a>
         </div>
       </div>
@@ -23,20 +23,16 @@
     <div class="mainbody">
 <div class="hentry">
   <h1 class="entry-title">yuan</h1>
-  <blockquote class="entry-description"><p>communication with yuan.</p></blockquote>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
     <ul><li><a href="#login">Login</a></li><li><a href="#publish">Publish</a></li></ul>
   </div>
 
-  <div class="entry-content"><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> yuan = require(<span class="string">'spm'</span>).sdk.yuan
-</code></pre></div>
-<p>This is a lower API, for higher API, use <code>spm.publish</code> or <code>spm.install</code>.</p>
+  <div class="entry-content"><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> yuan = require(<span class="string">'spm'</span>).sdk.yuan</code></pre></div><p>This is a lower API, for higher API, use <code>spm.publish</code> or <code>spm.install</code>.</p>
 <h2 id="login">Login</h2><div class="highlight"><pre><code class="javascript">yuan({username: <span class="string">'spm'</span>, password: <span class="string">'spm'</span>})
     .login(<span class="keyword">function</span>(err, response, body) {
         console.log(body.data);
-    })
-</code></pre></div><h2 id="publish">Publish</h2><div class="highlight"><pre><code class="javascript">yuan({
+    })</code></pre></div><h2 id="publish">Publish</h2><div class="highlight"><pre><code class="javascript">yuan({
     auth: 'auth code ....',
     distfile: './hello.tgz',
     root: 'spmjs',
@@ -44,25 +40,24 @@
     version': '1.0.0'
 }).publish(function(err, response, body) {
     console.log(body);
-});
-</code></pre></div></div>
+});</code></pre></div></div>
   <div class="entry-meta">
-    <time class="updated" datetime="2013-01-23T00:00:00+08:00">2013-01-23</time>
+    <time class="updated" datetime="2013-01-23T00:00:00.000Z">2013-01-23</time>
   </div>
 </div>
 
 <div class="sidebar">
   <h2 class="sidebar-title">Documentation</h2>
   <ul>
-    <li><a href="../api/spmrc">spmrc</a></li>
-    <li><a href="../api/iduri">iduri</a></li>
-    <li class="active"><a href="../api/yuan">yuan</a></li>
+    <li><a href="./iduri">iduri</a></li>
+    <li><a href="./spmrc">spmrc</a></li>
+    <li class="active"><a href="./yuan">yuan</a></li>
   </ul>
 </div>
 
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.2.3</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.3.0a1</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
     <div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>

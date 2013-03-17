@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.2.3">
+    <meta name="generator" content="nico 0.3.0a1">
     <meta name="theme" content="spm 0.1">
     <title>Plugin</title>
     <link rel="stylesheet" href="../static/one.css" />
@@ -14,7 +14,7 @@
       <div class="container">
         <a class="home" href="../">SPM</a>
         <div class="menu">
-          <a href="../en/">English</a>
+          <a href="./">English</a>
           <a href="../api/">API</a>
           <a href="../cli/">Manual</a>
         </div>
@@ -28,17 +28,13 @@
     <ul><li><a href="#register">Register</a></li><li><a href="#uninstall">Uninstall</a></li></ul>
   </div>
 
-  <div class="entry-content"><h2 id="register">Register</h2>
-<p>Thanks for npm&#39;s <code>postinstall</code> policy.</p>
-
+  <div class="entry-content"><h2 id="register">Register</h2><p>Thanks for npm&#39;s <code>postinstall</code> policy.</p>
 <p>Add in your <code>package.json</code>:</p>
 <div class="highlight"><pre><code class="javascript">{
     <span class="string">"scripts"</span>: {
         <span class="string">"postinstall"</span>: <span class="string">"scripts/postinstall.js"</span>
     }
-}
-</code></pre></div>
-<p>Create a <code>scripts/postinstall.js</code> in your package:</p>
+}</code></pre></div><p>Create a <code>scripts/postinstall.js</code> in your package:</p>
 <div class="highlight"><pre><code class="javascript">#!<span class="regexp">/usr/</span>bin/env node
 
 <span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)
@@ -46,61 +42,40 @@ spm.plugin.install({
     name: <span class="string">'init'</span>,
     binary: <span class="string">'spm-init'</span>,
     description: <span class="string">'Generate project scaffolding from a template.'</span>
-});
-</code></pre></div>
-<p>Make this script excutable by:</p>
-
-<pre>$ chmod +x scripts&#47;postinstall.js
-</pre>
-
-<p>And when you install this package, for example:</p>
-
-<pre>$ npm install spm-init -g
-</pre>
-
-<p>You will see init on spm now:</p>
-
-<pre>$ spm help
-</pre>
-<h2 id="uninstall">Uninstall</h2>
-<p>Add in your <code>package.json</code>:</p>
+});</code></pre></div><p>Make this script excutable by:</p>
+<pre>$ chmod +x scripts/postinstall.js</pre><p>And when you install this package, for example:</p>
+<pre>$ npm install spm-init -g</pre><p>You will see init on spm now:</p>
+<pre>$ spm help</pre><h2 id="uninstall">Uninstall</h2><p>Add in your <code>package.json</code>:</p>
 <div class="highlight"><pre><code class="javascript">{
     <span class="string">"scripts"</span>: {
         <span class="string">"uninstall"</span>: <span class="string">"scripts/uninstall.js"</span>
     }
-}
-</code></pre></div>
-<p>Create a <code>scripts/uninstall.js</code> in your package:</p>
+}</code></pre></div><p>Create a <code>scripts/uninstall.js</code> in your package:</p>
 <div class="highlight"><pre><code class="javascript">#!<span class="regexp">/usr/</span>bin/env node
 
 <span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)
-spm.plugin.uninstall(<span class="string">'init'</span>)
-</code></pre></div>
-<p>Make this script excutable by:</p>
-
-<pre>$ chmod +x scripts&#47;postinstall.js
-</pre>
-</div>
+spm.plugin.uninstall(<span class="string">'init'</span>)</code></pre></div><p>Make this script excutable by:</p>
+<pre>$ chmod +x scripts/postinstall.js</pre></div>
   <div class="entry-meta">
-    <time class="updated" datetime="2013-02-25T00:00:00+08:00">2013-02-25</time>
+    <time class="updated" datetime="2013-02-25T00:00:00.000Z">2013-02-25</time>
   </div>
 </div>
 
 <div class="sidebar">
   <h2 class="sidebar-title">Documentation</h2>
   <ul>
-    <li><a href="../en/">spm</a></li>
-    <li><a href="../en/build">Build</a></li>
-    <li><a href="../en/config">Config</a></li>
-    <li><a href="../en/install">Install</a></li>
-    <li><a href="../en/package">package.json</a></li>
-    <li class="active"><a href="../en/plugin">Plugin</a></li>
+    <li><a href="./index">spm</a></li>
+    <li><a href="./build">Build</a></li>
+    <li><a href="./config">Config</a></li>
+    <li><a href="./install">Install</a></li>
+    <li><a href="./package">package.json</a></li>
+    <li class="active"><a href="./plugin">Plugin</a></li>
   </ul>
 </div>
 
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.2.3</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.3.0a1</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
     <div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>

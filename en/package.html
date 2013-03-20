@@ -25,7 +25,7 @@
   <h1 class="entry-title">package.json</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
-    <ul><li><a href="#family">family</a></li><li><a href="#name">name</a></li><li><a href="#version">version</a></li><li><a href="#description">description</a></li><li><a href="#keywords">keywords</a></li><li><a href="#homepage">homepage</a></li><li><a href="#repository">repository</a></li><li><a href="#private">private</a></li><li><a href="#spm-alias">spm.alias</a></li><li><a href="#spm-output">spm.output</a><ul><li><a href="#single-file">Single File</a></li><li><a href="#glob-pattern">Glob Pattern</a></li></ul></li><li><a href="#merge-from-old-package-json">merge from old package.json</a></li></ul>
+    <ul><li><a href="#family">family</a></li><li><a href="#name">name</a></li><li><a href="#version">version</a></li><li><a href="#description">description</a></li><li><a href="#keywords">keywords</a></li><li><a href="#homepage">homepage</a></li><li><a href="#repository">repository</a></li><li><a href="#private">private</a></li><li><a href="#spm-alias">spm.alias</a></li><li><a href="#spm-output">spm.output</a><ul><li><a href="#single-file">Single File</a></li><li><a href="#glob-pattern">Glob Pattern</a></li></ul></li><li><a href="#old-time">Old Time</a></li></ul>
   </div>
 
   <div class="entry-content"><p>spm follows the <a href="https://github.com/spmjs/specification">Common Module Definition</a> packaging standards, compatible with nodejs&#39; package.json.</p>
@@ -61,10 +61,10 @@
             <span class="string">"ie"</span>: [<span class="number">6</span>, <span class="number">7</span>],
             <span class="string">"firefox"</span>: [<span class="string">"13"</span>],
             <span class="string">"chrome"</span>: [<span class="number">20</span>]
-        },
-        <span class="string">"platforms"</span>: [<span class="string">"ie/6"</span>, <span class="string">"chrome/20"</span>, <span class="string">"firefox"</span>]
+        }
     }
-}</code></pre></div><h2 id="family">family</h2><p>This is the account name on <a href="http://spmjs.org">http://spmjs.org</a>.</p>
+}</code></pre></div><p>Platforms can be an array:</p>
+<pre>&quot;platforms&quot;: [&quot;ie/6&quot;, &quot;chrome/20&quot;, &quot;firefox&quot;]</pre><h2 id="family">family</h2><p>This is the account name on <a href="http://spmjs.org">http://spmjs.org</a>.</p>
 <h2 id="name">name</h2><p>This is your package&#39;s name.</p>
 <h2 id="version">version</h2><p>The version of your package. We only accept version like this:</p>
 <pre>1.0.0</pre><p>The regexp is <code>\d+\.\d+\.\d+</code>.</p>
@@ -116,7 +116,7 @@ src/
                 locale.js</pre><p>You should define your output as:</p>
 <div class="highlight"><pre><code class="javascript">{
     <span class="string">"output"</span>: [<span class="string">"i18n/**/*"</span>]
-}</code></pre></div><h2 id="merge-from-old-package-json">merge from old package.json</h2><ol>
+}</code></pre></div><h2 id="old-time">Old Time</h2><ol>
 <li><code>root</code> is deprecated, use <code>family</code> instead.</li>
 <li><code>dependencies</code> is deprecated, use <code>spm.alias</code> instead.</li>
 <li><code>output</code> changed</li>

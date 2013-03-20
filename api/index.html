@@ -23,9 +23,14 @@
     <div class="mainbody">
 <div class="hentry">
   <h1 class="entry-title">spm</h1>
+  <div class="entry-toc">
+    <h3>Table of Contents</h3>
+    <ul><li><a href="#spm-version">spm.version</a></li><li><a href="#spm-log-category-message">spm.log(category, message)</a></li><li><a href="#spm-plugin">spm.plugin</a></li><li><a href="#spm-config">spm.config</a></li><li><a href="#spm-install-options">spm.install(options)</a></li><li><a href="#spm-info-options">spm.info(options)</a></li><li><a href="#spm-search-options">spm.search(options)</a></li><li><a href="#spm-publish-options">spm.publish(options)</a></li><li><a href="#spm-unpublish-options">spm.unpublish(options)</a></li><li><a href="#spm-sdk">spm.sdk</a></li></ul>
+  </div>
+
   <div class="entry-content"><p>Get the interface of spm:</p>
 <div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)</code></pre></div><h2 id="spm-version">spm.version</h2><p>The version of spm.</p>
-<h2 id="spm-log">spm.log</h2><p>Always use <code>spm.log</code> in your program, never use <code>console</code>.</p>
+<h2 id="spm-log-category-message">spm.log(category, message)</h2><p>Always use <code>spm.log</code> in your program, never use <code>console</code>.</p>
 <h2 id="spm-plugin">spm.plugin</h2><ul>
 <li>spm.plugin.install</li>
 <li>spm.plugin.uninstall</li>
@@ -38,17 +43,32 @@
 <li>spm.config.remove</li>
 <li>spm.config.show</li>
 </ul>
-<h2 id="spm-publish">spm.publish</h2><p>Publish a package to spmjs.org.</p>
-<h2 id="spm-install">spm.install</h2><p>Install packages from spmjs.org.</p>
+<h2 id="spm-install-options">spm.install(options)</h2><p>Install packages from spmjs.org.</p>
+<h2 id="spm-info-options">spm.info(options)</h2><p>Get information of a module from spmjs.org.</p>
+<h2 id="spm-search-options">spm.search(options)</h2><p>Search modules from spmjs.org.</p>
+<h2 id="spm-publish-options">spm.publish(options)</h2><p>Publish a package to spmjs.org.</p>
+<h2 id="spm-unpublish-options">spm.unpublish(options)</h2><p>Unpublish a package from spmjs.org.</p>
 <h2 id="spm-sdk">spm.sdk</h2><p>Low level API:</p>
 <ul>
-<li><code>spm.sdk.spmrc</code></li>
 <li><a href="https://github.com/spmjs/cmd-util/blob/master/docs/ast.md"><code>spm.sdk.ast</code></a></li>
-<li><code>spm.sdk.iduri</code></li>
-<li><code>spm.sdk.yuan</code></li>
-<li><code>spm.sdk.grunt</code></li>
+<li><a href="https://github.com/spmjs/cmd-util/blob/master/docs/iduri.md"><code>spm.sdk.iduri</code></a></li>
+<li><a href="https://github.com/spmjs/spmrc"><code>spm.sdk.spmrc</code></a></li>
+<li><a href="./yuan"><code>spm.sdk.yuan</code></a></li>
+<li><a href="./grunt"><code>spm.sdk.grunt</code></a></li>
 </ul>
 </div>
+  <div class="entry-meta">
+    <time class="updated" datetime="2013-03-20T00:00:00.000Z">2013-03-20</time>
+  </div>
+</div>
+
+<div class="sidebar">
+  <h2 class="sidebar-title">Documentation</h2>
+  <ul>
+    <li class="active"><a href="./index">spm</a></li>
+    <li><a href="./yuan">yuan</a></li>
+    <li><a href="./grunt">grunt</a></li>
+  </ul>
 </div>
 
     </div>

@@ -25,10 +25,16 @@
   <h1 class="entry-title">Plugin</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
-    <ul><li><a href="#register">Register</a></li><li><a href="#uninstall">Uninstall</a></li></ul>
+    <ul><li><a href="#the-background">The background</a><ul><li><a href="#install">Install</a></li><li><a href="#uninstall">Uninstall</a></li></ul></li><li><a href="#plugins">Plugins</a></li></ul>
   </div>
 
-  <div class="entry-content"><h2 id="register">Register</h2><p>Thanks for npm&#39;s <code>postinstall</code> policy.</p>
+  <div class="entry-content"><p>Plugins are commands that can be excuted(indexed) by <code>spm</code>.</p>
+<p>Lets try:</p>
+<pre>$ npm install spm-init -g</pre><p><code>spm-init</code> is a spm plugin, when you excute <code>spm -h</code>, you will find that spm has a plugin commands called <code>init</code>.</p>
+<p>Create a plugin is simple with <code>spm-init</code>. Get the template:</p>
+<pre>$ git clone git://github.com/spmjs/template-spmplugin.git ~/.spm/init/spmplugin</pre><p>And now, you can create a plugin:</p>
+<pre>$ spm init spmplugin</pre><h2 id="the-background">The background</h2><p>Learn the background of spm plugins.</p>
+<h3 id="install">Install</h3><p>Thanks for npm&#39;s <code>postinstall</code> policy.</p>
 <p>Add in your <code>package.json</code>:</p>
 <div class="highlight"><pre><code class="javascript">{
     <span class="string">"scripts"</span>: {
@@ -45,7 +51,7 @@ spm.plugin.install({
 });</code></pre></div><p>Make this script excutable by:</p>
 <pre>$ chmod +x scripts/postinstall.js</pre><p>And when you install this package, for example:</p>
 <pre>$ npm install spm-init -g</pre><p>You will see init on spm now:</p>
-<pre>$ spm help</pre><h2 id="uninstall">Uninstall</h2><p>Add in your <code>package.json</code>:</p>
+<pre>$ spm help</pre><h3 id="uninstall">Uninstall</h3><p>Add in your <code>package.json</code>:</p>
 <div class="highlight"><pre><code class="javascript">{
     <span class="string">"scripts"</span>: {
         <span class="string">"uninstall"</span>: <span class="string">"scripts/uninstall.js"</span>
@@ -55,9 +61,10 @@ spm.plugin.install({
 
 <span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)
 spm.plugin.uninstall(<span class="string">'init'</span>)</code></pre></div><p>Make this script excutable by:</p>
-<pre>$ chmod +x scripts/postinstall.js</pre></div>
+<pre>$ chmod +x scripts/postinstall.js</pre><h2 id="plugins">Plugins</h2><p>You can find some offical plugins on <a href="https://github.com/spmjs">github</a>.</p>
+</div>
   <div class="entry-meta">
-    <time class="updated" datetime="2013-02-25T00:00:00.000Z">2013-02-25</time>
+    <time class="updated" datetime="2013-03-20T00:00:00.000Z">2013-03-20</time>
   </div>
 </div>
 

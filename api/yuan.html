@@ -25,33 +25,29 @@
   <h1 class="entry-title">yuan</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
-    <ul><li><a href="#login">Login</a></li><li><a href="#publish">Publish</a></li></ul>
+    <ul><li><a href="#login">login</a></li><li><a href="#register">register</a></li><li><a href="#info">info</a></li><li><a href="#search">Search</a></li><li><a href="#publish">publish</a></li><li><a href="#unpublish">unpublish</a></li><li><a href="#upload">upload</a></li></ul>
   </div>
 
   <div class="entry-content"><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> yuan = require(<span class="string">'spm'</span>).sdk.yuan</code></pre></div><p>This is a lower API, for higher API, use <code>spm.publish</code> or <code>spm.install</code>.</p>
-<h2 id="login">Login</h2><div class="highlight"><pre><code class="javascript">yuan({username: <span class="string">'spm'</span>, password: <span class="string">'spm'</span>})
-    .login(<span class="keyword">function</span>(err, response, body) {
-        console.log(body.data);
-    })</code></pre></div><h2 id="publish">Publish</h2><div class="highlight"><pre><code class="javascript">yuan({
-    auth: 'auth code ....',
-    distfile: './hello.tgz',
-    root: 'spmjs',
-    name: 'spm',
-    version': '1.0.0'
-}).publish(function(err, response, body) {
-    console.log(body);
-});</code></pre></div></div>
+<h2 id="login">login</h2><p>Login your account.</p>
+<h2 id="register">register</h2><p>Register an account.</p>
+<h2 id="info">info</h2><p>Get information of a module.</p>
+<h2 id="search">Search</h2><p>Search modules.</p>
+<h2 id="publish">publish</h2><p>Publish a module.</p>
+<h2 id="unpublish">unpublish</h2><p>Unpublish a module.</p>
+<h2 id="upload">upload</h2><p>Upload docs.</p>
+</div>
   <div class="entry-meta">
-    <time class="updated" datetime="2013-01-23T00:00:00.000Z">2013-01-23</time>
+    <time class="updated" datetime="2013-03-20T00:00:00.000Z">2013-03-20</time>
   </div>
 </div>
 
 <div class="sidebar">
   <h2 class="sidebar-title">Documentation</h2>
   <ul>
-    <li><a href="./iduri">iduri</a></li>
-    <li><a href="./spmrc">spmrc</a></li>
+    <li><a href="./index">spm</a></li>
     <li class="active"><a href="./yuan">yuan</a></li>
+    <li><a href="./grunt">grunt</a></li>
   </ul>
 </div>
 
